@@ -7,6 +7,7 @@ users = [
   { _id: 123, username:'bob', password: 'bobpassword'},
   { _id: 456, username:'mike', password: 'mikepassword'}
   ];
+  
   findUserByCredentials(username: String, password: String){
   for (let i = 0; i < this.users.length; i++) {
   const  user = this.users[i];
@@ -18,5 +19,22 @@ users = [
   }
   return null;
   }
+
+  findUserById(_id: Number){
+    for (let i = 0; i < this.users.length; i++) {
+    const  user = this.users[i];
+    if(_id == user._id)
+    {
+    return user;
+    }
+  
+    }
+    return null;
+    }
+
+
+
+
+
 
 }

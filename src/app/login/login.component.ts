@@ -10,18 +10,25 @@ import { UserService } from '../services/user.service.client';
 })
 export class LoginComponent implements OnInit {
 
+  //class variables
+  username: string;
+  password: string;
+
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
   }
+
+
   login(username, password) {
-  console.log(username, password);
-  const user = this.userService.findUserByCredentials(username, password);
-  if(user != null)
-  {
-  this.router.navigate( ['profile', user._id]);
-  }
-
-
+    console.log(username, password);
+    const user = this.userService.findUserByCredentials(username, password);
+    if(user != null)
+    {
+      this.router.navigate( ['profile', user._id]);
+    }
   }
 }
+
+
+
